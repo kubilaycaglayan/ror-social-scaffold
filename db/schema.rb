@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_125423) do
     t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["sender_id", "receiver_id"], name: "index_friendships_on_sender_id_and_receiver_id", unique: true
   end
 
   create_table "likes", force: :cascade do |t|

@@ -20,4 +20,9 @@ class User < ApplicationRecord
     pending_invitation = pending_invitations.where(sender_id: sender.id)
     pending_invitation.destroy(pending_invitation.ids[0])
   end
+
+  def accept_pending_invitation(sender)
+    puts "Marios solution"
+    p Invitation.status = true
+  end
 end
