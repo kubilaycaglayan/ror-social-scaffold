@@ -22,7 +22,8 @@ class User < ApplicationRecord
   end
 
   def accept_pending_invitation(sender)
-    puts "Marios solution"
-    p Invitation.status = true
+    p received_invitation = pending_invitations.where(sender_id: sender.id).first
+    p received_invitation.status = true
+    p received_invitation.save
   end
 end
