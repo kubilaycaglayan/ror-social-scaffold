@@ -1,0 +1,13 @@
+User can send invitation
+user can receive invitation
+
+button
+
+sender_id = 1
+receiver_id = 2
+
+if there is no record for this attributes in the friendship table 
+show the button
+
+but if there is a record and the status is false 
+if the status is true the receivers accepted and i dont want to see the button

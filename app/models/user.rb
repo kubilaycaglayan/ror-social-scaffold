@@ -26,4 +26,8 @@ class User < ApplicationRecord
     p received_invitation.status = true
     p received_invitation.save
   end
+
+  def check_invitation(sender_id, receiver_id)
+    Friendship.all.where(sender_id: sender_id, receiver_id: receiver_id).exists?
+  end
 end
