@@ -22,9 +22,9 @@ class User < ApplicationRecord
   end
 
   def accept_pending_invitation(sender)
-    p received_invitation = pending_invitations.where(sender_id: sender.id).first
-    p received_invitation.status = true
-    p received_invitation.save
+    received_invitation = pending_invitations.where(sender_id: sender.id).first
+    received_invitation.status = true
+    received_invitation.save
   end
 
   def check_invitation(sender_id, receiver_id)
