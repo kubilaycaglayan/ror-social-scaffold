@@ -5,7 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "SEEEDING"
+names = ["Kubilay", "Marios", "Gandalf", "Frodo", "Kirk Hammett", "Gimmlik", "Boromir"]
+mails = ["a@a.com", "b@b.com", "c@c.com", "d@d.com", "e@e.com", "f@f.com", "g@g.com"]
+
+names.each_with_index do |name, index|
+  user = User.new
+  user.name = name
+  user.email = mails[index]
+  user.password = '000000'
+  user.password_confirmation = '000000'
+  user.save!
+end
+
+Friendship.create(sender_id: 1, receiver_id: 2)
+Friendship.create(sender_id: 2, receiver_id: 1)
+
+Friendship.create(sender_id: 3, receiver_id: 2)
+Friendship.create(sender_id: 3, receiver_id: 1)
+
+Friendship.create(sender_id: 4, receiver_id: 2)
+Friendship.create(sender_id: 4, receiver_id: 1)
+
+Friendship.create(sender_id: 5, receiver_id: 2)
+Friendship.create(sender_id: 5, receiver_id: 1)
+
+Friendship.create(sender_id: 6, receiver_id: 2)
+Friendship.create(sender_id: 6, receiver_id: 1)
 
 
-p Friendship.first.destroy
-p Friendship.create(sender_id: 1, receiver_id: 2)
+puts "SEEEDING DONE"
