@@ -3,8 +3,7 @@
   <% current_user.pending_invitations.each do |invitation| %>
   <li>
   <%= invitation.sender.name %>
-  <%=  invitation.sender.id %>
-  <%= show_accept_buttons(invitation.sender.id) %>
+  <%= show_accept_buttons(invitation) %>
   </li>
   <% end %>
 </ol>

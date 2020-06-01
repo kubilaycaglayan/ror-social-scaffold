@@ -11,7 +11,7 @@ module FriendshipsHelper
     render 'friendships/pending_invitations'
   end
 
-  def show_accept_buttons(sender_id)
-    render 'friendships/show_accept_buttons', sender_id: sender_id
+  def show_accept_buttons(invitation)
+    render 'friendships/show_accept_buttons', invitation: invitation
   end
 end

@@ -10,10 +10,16 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    puts 'INSIDE UPDATE METHOD'
-    p sender = User.find(params[:sender_id])
+    sender = User.find(params[:sender_id])
     current_user.accept_pending_invitation(sender)
+
+    redirect_to user_path
   end
 
-  def destroy; end
+  def destroy
+    invitation = Friendship.find(params[:invitation_id])
+    invitation.destroy
+
+    redirect_to user_path
+  end
 end

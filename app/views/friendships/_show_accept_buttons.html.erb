@@ -1,1 +1,2 @@
-<%= link_to 'Accept Invitation', friendship_path(sender_id: sender_id), method: :put %>
+<%= link_to 'Accept Invitation', friendship_path(sender_id: invitation.sender.id), method: :put %>
+<%= link_to 'Reject Invitation', friendship_path(invitation_id: invitation.id), method: :delete %>

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :invitations, class_name: 'Friendship', foreign_key: 'sender_id'
-  has_many :pending_invitations, class_name: 'Friendship', foreign_key: 'receiver_id'
+  has_many :pending_invitations, -> { where status: false }, class_name: 'Friendship', foreign_key: 'receiver_id'
 
   def send_invitation(receiver)
     invitations.create(receiver_id: receiver.id)
