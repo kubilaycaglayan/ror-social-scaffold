@@ -36,6 +36,10 @@ class User < ApplicationRecord
   end
 
   def friends
-    p invitations.where(user_id: id, status: true).ids
+    invitations.where(user_id: id, status: true).pluck(:friend_id)
+  end
+
+  def friend_with?(user)
+    friends.include?(user.id)
   end
 end

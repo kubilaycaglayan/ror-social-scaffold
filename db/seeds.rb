@@ -32,5 +32,8 @@ Friendship.create(user_id: 5, friend_id: 1)
 Friendship.create(user_id: 6, friend_id: 2)
 Friendship.create(user_id: 6, friend_id: 1)
 
+User.all.each do |user|
+  Post.create(content: "I am #{user.name}", user_id: user.id)
+end
 
 puts "SEEEDING DONE"

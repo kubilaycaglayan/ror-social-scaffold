@@ -1,10 +1,14 @@
 module FriendshipsHelper
   def invitation_button(user)
-    return if user == current_user || current_user.check_invitation(current_user.id, user.id)
+    return if user == current_user
+    record = Friendship.where(user_id: user.id, friend_id: current_user.id)[0]
 
-    if current_user.check_invitation(user.id, current_user.id)
-      record = Friendship.where(user_id: user.id, friend_id: current_user.id)[0]
-      render 'friendships/this_user_sent_you_an_invitation' unless record.status
+    if current_user.check_invitation(user.id, current_user.id) && record.status == false
+      render 'friendships/this_user_sent_you_an_invitation'
+    elsif Friendship.all.where(user_id: current_user.id, friend_id: user.id, status: false).empty? == false
+      render 'friendships/you_sent_invitation'
+    elsif current_user.friend_with?(user)
+      render 'friendships/is_your_friend'
     else
       render 'users/invite_friendship', user: user
     end
