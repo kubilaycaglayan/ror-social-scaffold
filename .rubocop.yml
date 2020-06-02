@@ -58,19 +58,3 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: false
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: false
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: false
-Lint/MixedRegexpCaptureTypes:
-  Enabled: false
-Style/ExponentialNotation:
-  Enabled: false
-Style/RedundantRegexpCharacterClass:
-  Enabled: false
-Style/RedundantRegexpEscape:
-  Enabled: false
-Style/SlicingWithRange:
-  Enabled: false

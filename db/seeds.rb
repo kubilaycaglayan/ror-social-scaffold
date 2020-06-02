@@ -19,7 +19,6 @@ names.each_with_index do |name, index|
 end
 
 Friendship.create(user_id: 1, friend_id: 2)
-Friendship.create(user_id: 2, friend_id: 1)
 
 Friendship.create(user_id: 3, friend_id: 2)
 Friendship.create(user_id: 3, friend_id: 1)
