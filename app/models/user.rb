@@ -34,4 +34,8 @@ class User < ApplicationRecord
   def check_invitation(sender_id, receiver_id)
     Friendship.all.where(user_id: sender_id, friend_id: receiver_id).exists?
   end
+
+  def friends
+    p invitations.where(user_id: id, status: true).ids
+  end
 end
