@@ -1,23 +1,31 @@
-describe 'the signin process', type: :feature do
+require 'rails_helper'
+
+RSpec.feature 'Friendships', type: :feature do
   before :each do
-    User.create(email: 'user@example.com', password: 'password')
-  end
-  it 'signs me in' do
-    print 'management file'
+    User.create(name: 'Marios', email: 'b@b.com', password: '000000', password_confirmation: '000000')
+    User.create(name: 'Kubilay', email: 'a@b.com', password: '000000', password_confirmation: '000000')
     visit 'users/sign_in'
     within('#new_user') do
-      fill_in 'Email', with: 'user@example.com'
-      fill_in 'Password', with: 'password'
+      fill_in 'user_email', with: 'b@b.com'
+      fill_in 'user_password', with: '000000'
     end
     click_button 'commit'
-    expect(page).to have_content 'success'
+    visit '/users'
   end
 
-  it 'signs me out' do
-    visit 'users'
-    within('#sessions') do
-      click_button 'nofollow'
-      expect(page).to have_content 'Sign in'
-    end
+  it 'allows user to send invitations to other users' do
+    expect(page).to have_content('Invite to Friendship')
+  end
+
+  it 'allows users to accept invitations' do
+    Friendship.create(sender_id: 2, receiver_id: 1)
+    click_link('My Page')
+    expect(page).to have_content('Accept Invitation')
+  end
+
+  it 'allows users to accept invitations' do
+    Friendship.create(sender_id: 2, receiver_id: 1)
+    click_link('My Page')
+    expect(page).to have_content('Reject Invitation')
   end
 end
