@@ -1,40 +1,41 @@
-CREATE TABLE `User` (
-  `id` <type>,
-  `name` <type>,
-  `` <type>,
-  PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `Post` (
-  `id` <type>,
-  `body` <type>,
-  `user_id` <type>,
+CREATE TABLE `posts` (
+  `id` integer,
+  `body` text,
+  `user_id` integer,
   PRIMARY KEY (`id`),
   KEY `FK` (`user_id`)
 );
 
-CREATE TABLE `Friend` (
-  `id` <type>,
-  `sender_id` <type>,
-  `receiver_id` <type>,
-  `status` <type>,
+CREATE TABLE `likes` (
+  `id` integer,
+  `post_id` integer,
+  `user_id` integer,
+  PRIMARY KEY (`id`),
+  KEY `FK` (`post_id`, `user_id`)
+);
+
+CREATE TABLE `friendship` (
+  `id` int,
+  `sender_id` int,
+  `receiver_id` int,
+  `status` boolean,
   PRIMARY KEY (`id`),
   KEY `FK` (`sender_id`, `receiver_id`)
 );
 
-CREATE TABLE `Comment` (
-  `id` <type>,
-  `body` <type>,
-  `user_id` <type>,
-  `post_id` <type>,
+CREATE TABLE `users` (
+  `id` integer,
+  `name` string,
+  `gravatar_url` string,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `comments` (
+  `id` int,
+  `body` text,
+  `user_id` int,
+  `post_id` int,
   PRIMARY KEY (`id`),
   KEY `FK` (`user_id`, `post_id`)
 );
 
-CREATE TABLE `Like` (
-  `id` <type>,
-  `post_id` <type>,
-  `user_id` <type>,
-  PRIMARY KEY (`id`),
-  KEY `FK` (`post_id`, `user_id`)
-);
