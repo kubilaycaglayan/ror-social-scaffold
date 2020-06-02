@@ -18,13 +18,13 @@ RSpec.feature 'Friendships', type: :feature do
   end
 
   it 'allows users to accept invitations' do
-    Friendship.create(sender_id: 2, receiver_id: 1)
+    Friendship.create(user_id: 2, friend_id: 1)
     click_link('My Page')
     expect(page).to have_content('Accept Invitation')
   end
 
   it 'allows users to accept invitations' do
-    Friendship.create(sender_id: 2, receiver_id: 1)
+    Friendship.create(user_id: 2, friend_id: 1)
     click_link('My Page')
     expect(page).to have_content('Reject Invitation')
   end

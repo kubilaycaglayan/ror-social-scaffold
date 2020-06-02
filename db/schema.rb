@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 2020_05_29_125423) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
+    t.integer "user_id"
+    t.integer "friend_id"
     t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sender_id", "receiver_id"], name: "index_friendships_on_sender_id_and_receiver_id", unique: true
+    t.index ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
   end
 
   create_table "likes", force: :cascade do |t|

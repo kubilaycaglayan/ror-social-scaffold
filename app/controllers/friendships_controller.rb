@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
   def create
     sender_id = current_user.id
     receiver_id = params[:id]
-    Friendship.create(sender_id: sender_id, receiver_id: receiver_id)
+    Friendship.create(user_id: sender_id, friend_id: receiver_id)
 
     redirect_to users_path
   end

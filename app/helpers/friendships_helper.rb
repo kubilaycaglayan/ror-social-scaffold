@@ -3,7 +3,7 @@ module FriendshipsHelper
     return if user == current_user || current_user.check_invitation(current_user.id, user.id)
 
     if current_user.check_invitation(user.id, current_user.id)
-      record = Friendship.where(sender_id: user.id, receiver_id: current_user.id)[0]
+      record = Friendship.where(user_id: user.id, friend_id: current_user.id)[0]
       render 'friendships/this_user_sent_you_an_invitation' unless record.status
     else
       render 'users/invite_friendship', user: user

@@ -18,20 +18,20 @@ names.each_with_index do |name, index|
   user.save!
 end
 
-Friendship.create(sender_id: 1, receiver_id: 2)
-Friendship.create(sender_id: 2, receiver_id: 1)
+Friendship.create(user_id: 1, friend_id: 2)
+Friendship.create(user_id: 2, friend_id: 1)
 
-Friendship.create(sender_id: 3, receiver_id: 2)
-Friendship.create(sender_id: 3, receiver_id: 1)
+Friendship.create(user_id: 3, friend_id: 2)
+Friendship.create(user_id: 3, friend_id: 1)
 
-Friendship.create(sender_id: 4, receiver_id: 2)
-Friendship.create(sender_id: 4, receiver_id: 1)
+Friendship.create(user_id: 4, friend_id: 2)
+Friendship.create(user_id: 4, friend_id: 1)
 
-Friendship.create(sender_id: 5, receiver_id: 2)
-Friendship.create(sender_id: 5, receiver_id: 1)
+Friendship.create(user_id: 5, friend_id: 2)
+Friendship.create(user_id: 5, friend_id: 1)
 
-Friendship.create(sender_id: 6, receiver_id: 2)
-Friendship.create(sender_id: 6, receiver_id: 1)
+Friendship.create(user_id: 6, friend_id: 2)
+Friendship.create(user_id: 6, friend_id: 1)
 
 
 puts "SEEEDING DONE"

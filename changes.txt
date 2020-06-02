@@ -1,0 +1,34 @@
+COLUMNS
+user_id,  friend_id | status( default: false )
+marios  | 
+kubilay |
+
+
+1) send invitation
+when kubilay sends invitation to Marios it creates new record in the db
+record = user_id(2) friend_id = 1 status: false
+
+
+
+2) decide invitation (Accept/Reject)
+  
+  2a) accept invitation 
+  When Marios accepts invitation we are going to do 2 things:
+  - we are going to update the current record status to true
+  - we are going to create new record and that record is user_id(1) friend_id(2) status= true
+
+  2b) reject invitation
+  - when Marios rejects invitation we are deleting that record
+
+
+
+
+create methods for queries
+
+to see invitations Marios get:
+
+user_id(?) friend_id(marios.id) status = false
+
+to see invitations Marios send:
+
+user_id(1) friend_id(?) status = false

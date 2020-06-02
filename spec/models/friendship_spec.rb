@@ -14,7 +14,7 @@ RSpec.describe Friendship, type: :model do
     password_confirmation: '000000'
   )
 
-  let(:friendship) { Friendship.new(sender_id: 1, receiver_id: 2) }
+  let(:friendship) { Friendship.new(user_id: 1, friend_id: 2) }
 
   describe 'associations' do
     it 'belongs to a sender' do
@@ -28,7 +28,7 @@ RSpec.describe Friendship, type: :model do
 
   describe 'validations' do
     it 'has uniqueness on columns sender_id and receiver_id' do
-      Friendship.create(sender_id: 1, receiver_id: 2)
+      Friendship.create(user_id: 1, friend_id: 2)
       expect(friendship).not_to be_valid
     end
   end
