@@ -13,6 +13,8 @@
   </p>
 
   <div class='post-comments-section'>
+    <h5>Comments</h5>
+    <span> This post has <%= pluralize(post.comments.count, "Comment") %>  </span>
     <% post.comments.each do |comment| %>
       <div class="post-comments">
         <p>
