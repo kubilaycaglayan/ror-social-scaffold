@@ -1,6 +1,6 @@
 COLUMNS
 user_id,  friend_id | status( default: false )
-marios  | 
+marios  |
 kubilay |
 
 
@@ -11,8 +11,8 @@ record = user_id(2) friend_id = 1 status: false
 
 
 2) decide invitation (Accept/Reject)
-  
-  2a) accept invitation 
+
+  2a) accept invitation
   When Marios accepts invitation we are going to do 2 things:
   - we are going to update the current record status to true
   - we are going to create new record and that record is user_id(1) friend_id(2) status= true
@@ -32,3 +32,25 @@ user_id(?) friend_id(marios.id) status = false
 to see invitations Marios send:
 
 user_id(1) friend_id(?) status = false
+
+
+___________-
+
+friendship cases
+
+1-) not friends && no reaction
+  SHOW INVITE BUTTON
+
+
+
+2-) you sent invitation
+  SHOW FEEDBACK
+
+3-) other person sent invitation
+  SHOW FEEDBACK
+
+4-) you are friends
+  SHOW FEEDBACK
+
+5-) if you are that same person
+  DO NOTHING
