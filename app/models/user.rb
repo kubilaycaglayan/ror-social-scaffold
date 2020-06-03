@@ -31,8 +31,8 @@ class User < ApplicationRecord
     new_invitation.save
   end
 
-  def check_invitation(sender_id, receiver_id)
-    Friendship.all.where(user_id: sender_id, friend_id: receiver_id).exists?
+  def check_invitation(id1, id2)
+    Friendship.all.where(user_id: id1, friend_id: id2).exists?
   end
 
   def friends
