@@ -19,7 +19,6 @@ names.each_with_index do |name, index|
 end
 
 Friendship.create(sender_id: 1, receiver_id: 2)
-Friendship.create(sender_id: 2, receiver_id: 1)
 
 Friendship.create(sender_id: 3, receiver_id: 2)
 Friendship.create(sender_id: 3, receiver_id: 1)
@@ -32,6 +31,11 @@ Friendship.create(sender_id: 5, receiver_id: 1)
 
 Friendship.create(sender_id: 6, receiver_id: 2)
 Friendship.create(sender_id: 6, receiver_id: 1)
+
+User.all.each do |user|
+  Post.create(content: "I am #{user.name}", user_id: user.id)
+end
+
 
 
 puts "SEEEDING DONE"

@@ -30,4 +30,11 @@ class User < ApplicationRecord
   def check_invitation(sender_id, receiver_id)
     Friendship.all.where(sender_id: sender_id, receiver_id: receiver_id).exists?
   end
+
+  def friends
+    friends_i_send_invitation = Friendship.all.where(sender_id: id, status: true).pluck(:receiver_id)
+    friends_who_send_invitation_to_me = Friendship.all.where(receiver_id: id, status: true).pluck(:sender_id)
+    all_friends = friends_i_send_invitation + friends_who_send_invitation_to_me
+    all_friends.uniq
+  end
 end
