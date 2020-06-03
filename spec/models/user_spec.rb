@@ -29,5 +29,17 @@ RSpec.describe User, type: :model do
     it 'has many pending invitations' do
       expect(user).to respond_to(:pending_invitations)
     end
+
+    it 'has many posts' do
+      expect(user).to respond_to(:posts)
+    end
+
+    it 'has many comments' do
+      expect(user).to respond_to(:comments)
+    end
+
+    it 'has many likes' do
+      expect(user).to respond_to(:likes)
+    end
   end
 end
