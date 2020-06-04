@@ -45,7 +45,7 @@ Kubilay Caglayan
 
 
 # Home Page
-![stay-in-touch](<img width="1443" alt="Screenshot 2020-06-04 at 11 29 41 AM" src="https://user-images.githubusercontent.com/50610396/83733802-be666000-a656-11ea-928b-00409fc794e3.png">)
+<img width="1443" alt="Screenshot 2020-06-04 at 11 29 41 AM" src="https://user-images.githubusercontent.com/50610396/83735770-7432ae00-a659-11ea-95bc-bedc5c36431d.png">
 
 # Automated Test Section
 - Used RSpec for browser-side test.
