@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -45,4 +46,20 @@ class User < ApplicationRecord
     all_friends = friends_i_send_invitation + friends_who_send_invitation_to_me
     all_friends.uniq
   end
+
+  def self.find_or_create_from_auth_hash(auth)
+  where(id: auth.uid.to_s[0..9].to_i).first_or_initialize.tap do |user|
+    # user.provider = auth.provider
+    # user.uid = auth.uid
+      user.id = auth.uid.to_s[0..9].to_i
+    # user.first_name = auth.info.first_name
+    # user.last_name = auth.info.last_name
+      user.name = auth.info.first_name + " " + auth.info.last_name
+      user.email = auth.info.email
+    # user.picture = auth.info.image
+      user.password = "000000"
+      user.password_confirmation = "000000"
+      user.save!
+  end
+end
 end

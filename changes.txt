@@ -54,3 +54,29 @@ friendship cases
 
 5-) if you are that same person
   DO NOTHING
+
+  ### FINAL TOUCHES
+
+  4 hours
+
+  1-) styling
+      add backgroung
+
+  2-) changing the name of the application
+      The Matrix
+      Let's Connect
+      F4F
+      BFFE
+
+  3-) omniauth
+
+  4-) new features
+
+  5-) tests
+
+  ____ plan
+
+  start reading about omniauth gem
+  decide what to do
+  client_id: 501350442601-533uen6u4h8ulk758jfjqrmj3k5jeqcf.apps.googleusercontent.com
+  client_secret: jlmsxp_QtGxdS-Fl3Eh48lTc

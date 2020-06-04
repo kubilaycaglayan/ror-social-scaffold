@@ -25,6 +25,7 @@
         <%= link_to "Sign out (#{current_user.name})", destroy_user_session_path, method: :delete, id: "signout" %>
       <% else %>
         <%= link_to 'Sign in', user_session_path %>
+        <%= link_to 'Sign in With Google', login_path %>
       <% end %>
     </nav>
     <% if notice.present? %>
