@@ -9,7 +9,6 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   def self.visible_posts(current_user)
-    puts 'Visible posts calculating'
     friends_ids = current_user.friends
     friends_ids << current_user.id
     Post.all.where(user_id: friends_ids)
