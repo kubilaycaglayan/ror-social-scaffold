@@ -41,4 +41,12 @@ RSpec.describe Friendship, type: :model do
       expect(record.empty?).not_to be true
     end
   end
+
+  # describe 'unit tests' do
+  #   Friendship.create(user_id: 1, friend_id: 2)
+  #   it 'checks if the user send invitation' do
+  #     result = Friendship.you_sent_invitation?(1, 2)
+  #     expect(result).to be true
+  #   end
+  # end
 end
