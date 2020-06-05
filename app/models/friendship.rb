@@ -14,8 +14,8 @@ class Friendship < ApplicationRecord
   end
 
   def self.reacted?(id1, id2)
-    case1 = you_sent_invitation(id1, id2)
-    case2 = you_got_invitation(id2, id1)
+    case1 = you_sent_invitation?(id1, id2)
+    case2 = you_got_invitation?(id2, id1)
 
     case1 || case2
   end

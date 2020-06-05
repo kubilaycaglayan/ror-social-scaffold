@@ -42,11 +42,22 @@ RSpec.describe Friendship, type: :model do
     end
   end
 
-  # describe 'unit tests' do
-  #   Friendship.create(user_id: 1, friend_id: 2)
-  #   it 'checks if the user send invitation' do
-  #     result = Friendship.you_sent_invitation?(1, 2)
-  #     expect(result).to be true
-  #   end
-  # end
+  describe 'unit tests' do
+    it 'checks if the user send invitation' do
+      Friendship.create(user_id: 1, friend_id: 2)
+      result = Friendship.you_sent_invitation?(1, 2)
+      expect(result).to be true
+    end
+
+    it 'returns true if you got invitation for specific user' do
+      Friendship.create(user_id: 1, friend_id: 2)
+      result = Friendship.you_got_invitation?(1, 2)
+      expect(result).to be false
+    end
+
+    it 'returns true if the two given ids have any records' do
+      result = Friendship.reacted?(1, 2)
+      expect(result).to be false
+    end
+  end
 end
