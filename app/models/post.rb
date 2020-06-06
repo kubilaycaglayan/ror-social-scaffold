@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
   has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :likes, dependent: :destroy, foreign_key: 'post_id'
 
   def self.visible_posts(current_user)
     friends_ids = current_user.friends
