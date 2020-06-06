@@ -1,10 +1,9 @@
 # SOCIAL MEDIA WEBSITE
 
-In this Ruby on Rails project, we have created a web application with Users signing up, creating posts, send friend requests to other users, leave comment to other people's posts and also like posts. 
+In this Ruby on Rails project, we have created a web application in which users can sign up, create posts, send friend requests to other users, leave comment to other posts and also like posts.
 
-# Timeline Page
-<img width="1443" alt="Screenshot 2020-06-04 at 11 29 41 AM" src="https://user-images.githubusercontent.com/50610396/83735770-7432ae00-a659-11ea-95bc-bedc5c36431d.png">
-
+# Timeline
+<img width="1443" alt="timeline" src="https://user-images.githubusercontent.com/50610396/83735770-7432ae00-a659-11ea-95bc-bedc5c36431d.png">
 
 # [LIVE LINK](http://stay-in-touch1987.herokuapp.com/)
 
@@ -31,17 +30,15 @@ In this Ruby on Rails project, we have created a web application with Users sign
 # Associations
 - Users signing up, creating posts, send friend requests to other users, leave comment to other people's posts and also like posts.
 
-
-# Automated Test Section
+# Automated Tests With RSpec
 - Used RSpec for browser-side test.
 - Used Capybara gem for client-side(integration) tests.
 
-- run `bundle exec rspec` in your terminal to run the tests.
-
+- run `bundle exec rspec` in your terminal test the project.
 
 # Feature Section
-This is an open source project. Feel free to add your feedback. If, for any reason, this project doesn't work as supposed to be in your computer, create an issue so we can help you out with it. Lastly, you can request for a feature to be added.
-
+This is an open source project. Feel free to add your feedback. If, for any reason, this project doesn't work as supposed to be in your computer, create an issue so we can help you out with it.
+Also, you can request for a feature to be added.
 
 # Built With
 
