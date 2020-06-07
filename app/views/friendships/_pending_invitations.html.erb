@@ -1,0 +1,9 @@
+<h3>Pending Invitations</h3>
+<ol>
+  <% current_user.pending_invitations.each do |invitation| %>
+  <li>
+  <%= invitation.sender.name %>
+  <%= show_accept_buttons(invitation) %>
+  </li>
+  <% end %>
+</ol>
